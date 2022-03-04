@@ -1,9 +1,9 @@
-import { valida } from './validacao.js'
+import { valida } from './validacao.js';
 
 const inputs = document.querySelectorAll('input');
 
 inputs.forEach(input =>  {
-    if(input.dataset.set.tipo == 'preco') {
+    if(input.dataset.tipo === 'preco') {
         SimpleMaskMoney.setMask(input, {
             prefix: 'R$ ',
             fixed: true,

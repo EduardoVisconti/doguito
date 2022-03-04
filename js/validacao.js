@@ -82,7 +82,7 @@ function validaDataNascimento(input) {
     let mensagem = '';
 
     if (!maiorQue18(dataRecebida)) {
-    mensagem = 'Você deve ser maior que 18 anos para se cadastrar.';
+        mensagem = 'Você deve ser maior que 18 anos para se cadastrar.';
     }
 
     input.setCustomValidity(mensagem);
@@ -103,7 +103,7 @@ function validaCPF(input) {
         mensagem = 'O CPF digitado não é valido.';
     }
 
-    input,setCustomValidity(mensagem);
+    input.setCustomValidity(mensagem);
 }
 
 function checkCPFRepetido(cpf) {
@@ -151,7 +151,7 @@ function checkDigitoVerificador(cpf, multiplicador) {
         contador++
     }
 
-    if(checkDigitoVerificador == confirmaDigito(soma)) {
+    if(digitoVerificador == confirmaDigito(soma)) {
         return checkDigitoVerificador(cpf, multiplicador + 1);
     }
 
@@ -164,7 +164,7 @@ function confirmaDigito(soma) {
 
 function recuperarCEP(input) {
     const cep = input.value.replace(/\D/g, '');
-    const url =  `https://viacep.com.br/ws/${cep}/json`;
+    const url = `https://viacep.com.br/ws/${cep}/json`;
     const options = {
         method: 'GET',
         mode: 'cors',
