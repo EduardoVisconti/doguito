@@ -55,7 +55,7 @@ function mostraMensagemDeErro(tipoDeInput, input) {
 }
 
 function validaDataNascimento(input) {
-    const dataRecebida = new DataTransfer(input.value);
+    const dataRecebida = new Date(input.value);
     let mensagem = '';
 
     if (!maiorQue18(dataRecebida)) {
