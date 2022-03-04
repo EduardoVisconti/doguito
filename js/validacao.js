@@ -164,7 +164,7 @@ function confirmaDigito(soma) {
 
 function recuperarCEP(input) {
     const cep = input.value.replace(/\D/g, '');
-    const url = `https://viacep.com.br/ws/${cep}/json`;
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
     const options = {
         method: 'GET',
         mode: 'cors',
@@ -178,13 +178,13 @@ function recuperarCEP(input) {
             response => response.json()
         ).then(
             data => {
-                 if(data.erro) {
-                     input.setCustomValidity('Não foi possível buscar o CEP');
-                     return;
-                 }
-                 input.setCustomValidity('');
-                 preencheCamposComCEP(data);
-                 return;
+                if(data.erro) {
+                    input.setCustomValidity('Não foi possível buscar o CEP');
+                    return;
+                }
+                input.setCustomValidity('');
+                preencheCamposComCEP(data);
+                return;
             }
         )
     }
